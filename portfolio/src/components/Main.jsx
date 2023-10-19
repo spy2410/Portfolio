@@ -9,7 +9,22 @@ const Main = () => {
   const [isLiked, setIsLiked] = useState(false);
   const toggleLike = () => {
     setIsLiked(!isLiked);
+  }
+  const twitter = () => {
+    window.open('https://twitter.com/Vatsal0399','_parent');
   };
+  const spotify = () => {
+    window.open('https://open.spotify.com/user/lxmkubahmrpxqh43rc6knxwxk','_blank');
+  };
+  const instagram = () => {
+    window.open('https://www.instagram.com/vats_al24/','_blank');
+  };
+  const linkedin = () => {
+    window.open('https://www.linkedin.com/in/vatsal-m-35351b200/','_blank');
+  };
+
+
+
   return (
     <div id='main'>
       <img className='w-full h-screen object-cover object-left' src={mainImage} alt="image" />
@@ -23,7 +38,7 @@ const Main = () => {
               sequence={[
                 'Frontend Developer',
                 2000, 
-                'Competitive Programmer',
+                'Competitive Programmer', 
                 2000, 
                 'Plane Fanatic', 
                 1000
@@ -35,10 +50,18 @@ const Main = () => {
             />
           </h2>
           <div className='flex justify-between pt-6 max-w-[200px] w-full'>
-            <FaTwitter className='cursor-pointer ' size={20} />
-            <FaSpotify className='cursor-pointer ' size={20} />
-            <FaInstagram className='cursor-pointer ' size={20} />
-            <FaLinkedin className='cursor-pointer ' size={20} />
+            <a href='#' onClick={twitter}>
+              <FaTwitter className='cursor-pointer'  size={20} /> 
+            </a>
+            <a href='#' onClick={spotify}>
+              <FaSpotify className='cursor-pointer' size={20} /> 
+            </a>
+            <a href='#' onClick={instagram}>
+              <FaInstagram className='cursor-pointer' size={20} /> 
+            </a>
+            <a href='#' onClick={linkedin}>
+              <FaLinkedin className='cursor-pointer' size={20} /> 
+            </a>
             {isLiked ? (
               <FaHeart className='cursor-pointer' size={20} onClick={toggleLike} /> 
             ) : (
