@@ -11,7 +11,7 @@ const Main = () => {
     setIsLiked(!isLiked);
   }
   const twitter = () => {
-    window.open('https://twitter.com/Vatsal0399','_parent');
+    window.open('https://twitter.com/Vatsal0399','_blank');
   };
   const spotify = () => {
     window.open('https://open.spotify.com/user/lxmkubahmrpxqh43rc6knxwxk','_blank');
