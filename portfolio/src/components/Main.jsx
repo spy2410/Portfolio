@@ -1,15 +1,23 @@
 import React, { useState } from 'react';
 import { TypeAnimation } from 'react-type-animation';
-import { FaTwitter, FaInstagram, FaLinkedin, FaSpotify, FaHeart, FaRegHeart } from 'react-icons/fa';
+import { FaTwitter, FaInstagram, FaLinkedin, FaSpotify, FaHeart, FaRegHeart, FaGithub } from 'react-icons/fa';
 import mainImage from '../images/main.png';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
 const Main = () => {
   const [isLiked, setIsLiked] = useState(false);
+  const [likecount, setLikecount] = useState(0);
+
   const toggleLike = () => {
     setIsLiked(!isLiked);
+    setLikecount(isLiked ? likecount - 1 : likecount + 1);
+    const message = `You have ${isLiked ? 'unliked' : 'liked'} the portfolio. Total Likes: ${isLiked ? likecount - 1 : likecount + 1}`;
+    toast.info(message);  
   }
+
   const twitter = () => {
     window.open('https://twitter.com/Vatsal0399','_blank');
   };
@@ -22,6 +30,9 @@ const Main = () => {
   const linkedin = () => {
     window.open('https://www.linkedin.com/in/vatsal-m-35351b200/','_blank');
   };
+  const github = () => {
+    window.open('https://github.com/spy2410','_blank');
+  }
 
 
 
@@ -58,6 +69,9 @@ const Main = () => {
             </a>
             <a href='#' onClick={instagram}>
               <FaInstagram className='cursor-pointer' size={20} /> 
+            </a>
+            <a href='#' onClick={github}>
+              <FaGithub className='cursor-pointer' size={20} /> 
             </a>
             <a href='#' onClick={linkedin}>
               <FaLinkedin className='cursor-pointer' size={20} /> 
